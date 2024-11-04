@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net8.0</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <Nullable>enable</Nullable>
+	  <IsPackable>true</IsPackable>
+	  <Authors>Drew Wilson</Authors>
+	  <PackageId>Vertizens.SliceR.Validated.Fluent</PackageId>
+	  <Description>Adds to SliceR FluentValidation implementation for model validation pipeline for validated handlers</Description>
+	  <PackageTags>Slice, API, Validation, Fluent, Handler</PackageTags>
+	  <PackageProjectUrl>https://github.com/vertizens/SliceR.Validated.Fluent</PackageProjectUrl>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+	  <PublishRepositoryUrl>true</PublishRepositoryUrl>
+	  <IncludeSymbols>true</IncludeSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="Vertizens.SliceR" Version="0.2.0-rc.0.1.1" />
+	  <PackageReference Include="MinVer" Version="6.0.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+  </ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+		<InternalsVisibleTo Include="Vertizens.SliceR.Validated.Fluent.Tests"/>
+	</ItemGroup>
+
+</Project>
