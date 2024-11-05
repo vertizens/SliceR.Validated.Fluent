@@ -10,7 +10,7 @@ public class FluentModelValidatorTests
         var services = new ServiceCollection();
         services.AddSliceRFluentValidators();
         var provider = services.BuildServiceProvider();
-        var validator = new FluentModelValidator(provider);
+        var validator = provider.GetRequiredService<IModelValidator<TestModel1>>();
 
         var testModel = new TestModel1 { Name = "Too Long Name of which is not valid." };
         var results = await validator.Validate(testModel);
@@ -25,7 +25,7 @@ public class FluentModelValidatorTests
         var services = new ServiceCollection();
         services.AddSliceRFluentValidators();
         var provider = services.BuildServiceProvider();
-        var validator = new FluentModelValidator(provider);
+        var validator = provider.GetRequiredService<IModelValidator<TestModel1>>();
 
         var testModel = new TestModel1 { Name = "Short Name." };
         var results = await validator.Validate(testModel);
