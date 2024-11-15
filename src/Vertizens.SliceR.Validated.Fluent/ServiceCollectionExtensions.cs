@@ -8,16 +8,28 @@ using Vertizens.SliceR.Operations;
 namespace Vertizens.SliceR.Validated.Fluent;
 public static class ServiceCollectionExtensions
 {
+    /// <summary>
+    /// Registers <see cref="IValidator{T}"/> implementations defined in the calling assembly.
+    /// Registers the FluentValidation implementation for validation for <see cref="IValidatedHandler{TRequest}"/> or <see cref="IValidatedHandler{TRequest, TResult}"/>
+    /// </summary>
     public static IServiceCollection AddSliceRFluentValidators(this IServiceCollection services)
     {
         return services.AddSliceRFluentValidators(Assembly.GetCallingAssembly());
     }
 
+    /// <summary>
+    /// Registers <see cref="IValidator{T}"/> implementations defined in the passed assembly.
+    /// Registers the FluentValidation implementation for validation for <see cref="IValidatedHandler{TRequest}"/> or <see cref="IValidatedHandler{TRequest, TResult}"/>
+    /// </summary>
     public static IServiceCollection AddSliceRFluentValidators(this IServiceCollection services, Assembly assembly)
     {
         return services.AddSliceRFluentValidators(assembly.GetTypes());
     }
 
+    /// <summary>
+    /// Registers <see cref="IValidator{T}"/> implementations defined in the passed types.
+    /// Registers the FluentValidation implementation for validation for <see cref="IValidatedHandler{TRequest}"/> or <see cref="IValidatedHandler{TRequest, TResult}"/>
+    /// </summary>
     public static IServiceCollection AddSliceRFluentValidators(this IServiceCollection services, params Type[] types)
     {
         services.TryAddTransient(typeof(IModelValidator<>), typeof(FluentModelValidator<>));
