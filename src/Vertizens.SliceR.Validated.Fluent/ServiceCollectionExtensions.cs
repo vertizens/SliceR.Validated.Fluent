@@ -6,6 +6,10 @@ using Vertizens.ServiceProxy;
 using Vertizens.SliceR.Operations;
 
 namespace Vertizens.SliceR.Validated.Fluent;
+
+/// <summary>
+/// Extensions for ServiceCollection
+/// </summary>
 public static class ServiceCollectionExtensions
 {
     /// <summary>

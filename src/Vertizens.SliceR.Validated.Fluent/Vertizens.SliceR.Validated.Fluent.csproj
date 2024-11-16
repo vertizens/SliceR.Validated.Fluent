@@ -14,11 +14,13 @@
 	  <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 	  <PublishRepositoryUrl>true</PublishRepositoryUrl>
 	  <IncludeSymbols>true</IncludeSymbols>
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	  <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.10.0" />
-    <PackageReference Include="Vertizens.SliceR" Version="0.4.0-rc.1" />
+    <PackageReference Include="Vertizens.SliceR" Version="0.4.0-rc.1.1" />
 	  <PackageReference Include="MinVer" Version="6.0.0">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -27,6 +29,7 @@
 
 	<ItemGroup>
 		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+		<None Include="..\..\icon.png" Pack="true" PackagePath="\" />
 		<InternalsVisibleTo Include="Vertizens.SliceR.Validated.Fluent.Tests" />
 	</ItemGroup>
 
