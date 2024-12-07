@@ -1,6 +1,6 @@
 # SliceR.Validated.Fluent
 
-Adds to SliceR FluentValidation implementation for model validation pipeline for validated handlers
+Adds FluentValidation to SliceR for model validation pipeline of validated handler requests.
 
 ## Getting Started
 
@@ -13,3 +13,5 @@ Register with this call:
 The `Insert<>` and `Update<,>` operations already have validators registered that call IValidators on the generic type that is the focus for those operations.
 
 Search for FluentValidation for how to use that library but know that any `IValidator` that is defined in calling assembly gets registered in the above call.
+
+Implement `AbstractValidator<RequestType>` according to FluentValidation documentation.
